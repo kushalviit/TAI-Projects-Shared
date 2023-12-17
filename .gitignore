@@ -1,0 +1,5 @@
+*/data/*
+*.bin
+*__pycache__*
+*/support_share/macaulay/*
+*/support_share/share/*
