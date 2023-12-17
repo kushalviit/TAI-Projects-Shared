@@ -1,0 +1,46 @@
+import torch
+from transformers import*
+from bertviz import *
+import warnings
+
+class bertvizJupyter:
+     def __init__(self,modelVersion,bertModel):
+         warnings.warn("Use only in Jupyter Environment!", ImportWarning)
+         self.modelVersion = modelVersion
+         self.bertModel = bertModel
+         print(f"Loading model's {self.modelVersion} Version to CPU")
+         self.device =  torch.device('cpu')
+         self.bertModel.to(self.device)
+         self.tokenizer = BertTokenizer.from_pretrained(self.modelVersion)
+         self.attention = None
+         self.inputs = None
+         self.input_ids = None
+         self.token_type_ids = None
+         self.tokens = None
+         self.input_id_list = None
+         self.sentence_b_start = None
+
+
+
+     def loadSentencesandBertprocess(self,sentenceA=None,sentenceB=None)
+         if sentenceB == None:
+            self.inputs = self.tokenizer.encoder_plus(sentenceA,sentenceB, return_tensors='pt'
+         else if sentenceA != None and sentenceB !=None:
+             self.inputs= self.tokenizer.encoder_plus(sentenceA,sentenceB, return_tensors = 'pt')
+         else:
+             print("No sentences give as paramteres! Exiting!")
+             return
+         print("")
+         self.input_ids = self.inputs['input_ids']
+         self.token_type_ids = self.inputs['token_type_ids']
+         self.input_id_list = self.input_ids[0].tolist()
+         if sentenceB=None:
+            self.sentence_b_start = len(self.token_type_ids[0].tolist())-1
+         else:
+            self.sentence_b_start = self.token_type_ids[0].tolist().index(1)
+         
+ 
+
+
+
+
