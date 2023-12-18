@@ -2,4 +2,7 @@
 *.bin
 *__pycache__*
 */support_share/macaulay/*
-*/support_share/share/*
+*/support_share/shane/*
+*/support_share/DrugSeek/data/*
+*/support_share/DrugSeek/code/*.pth
+*/support_share/DrugSeek/code/*.txt

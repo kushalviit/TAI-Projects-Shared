@@ -1,0 +1,6 @@
+length of training 9630
+Number of interations per epoch 963.0
+length of testing 4539
+length of validation 1070
+epoch : 0, iteration_number : 100, loss : 0.7041931748390198
+epoch : 0, iteration_number : 200, loss : 0.6934404373168945

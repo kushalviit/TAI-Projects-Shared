@@ -1,2 +1,4 @@
 data/
 results/
+model_checkpoints.pth
+log_files.txt
